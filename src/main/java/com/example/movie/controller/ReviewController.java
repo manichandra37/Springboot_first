@@ -23,4 +23,9 @@ public class ReviewController {
 
         return reviewService.updateReview(id,reviewRequest);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteReview(@PathVariable Integer id){
+        reviewService.deleteReview(id);
+    }
 }

@@ -1,5 +1,6 @@
 package com.example.movie.service;
 
+import com.example.movie.CustomExceptions.ReviewNotFoundException;
 import com.example.movie.dto.ReviewRequest;
 import com.example.movie.entity.Movie;
 import com.example.movie.entity.MovieReview;
@@ -56,6 +57,15 @@ public class ReviewService {
         existing.setReviewerName(request.getReviewerName());
 
         return reviewRepository.save(existing);
+    }
+
+    public Void deleteReview(Integer id) {
+
+        if (!reviewRepository.existsById(id)) {
+            throw new ReviewNotFoundException("Review with id " + id + " is not found");
+        }
+        reviewRepository.deleteById(id);
+        return null;
     }
 
 }
