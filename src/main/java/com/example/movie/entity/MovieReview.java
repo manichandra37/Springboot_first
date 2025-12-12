@@ -1,5 +1,6 @@
 package com.example.movie.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -32,6 +33,7 @@ public class MovieReview {
 
     @ManyToOne
     @JoinColumn(name = "movieId")
+    @JsonBackReference
     private Movie movie;
 
 }

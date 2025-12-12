@@ -6,6 +6,8 @@ import com.example.movie.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/reviews")
 public class ReviewController {
@@ -28,4 +30,10 @@ public class ReviewController {
     public void deleteReview(@PathVariable Integer id){
         reviewService.deleteReview(id);
     }
+
+    @GetMapping("/movie/{movieId}")
+    public List<MovieReview> getReviewsForMovie(@PathVariable Integer movieId) {
+        return reviewService.getReviewsByMovieId(movieId);
+    }
+
 }

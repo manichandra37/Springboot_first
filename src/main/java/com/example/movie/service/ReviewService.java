@@ -29,11 +29,6 @@ public class ReviewService {
         return reviewRepository.save(movieReview);
     }
 
-    public void deleteby(Integer id) {
-        reviewRepository.deleteById(id);
-    }
-
-
     public MovieReview saveReview(ReviewRequest reviewRequest) {
 
         Movie movie = movieRepository.findById(reviewRequest.getMovieId())
