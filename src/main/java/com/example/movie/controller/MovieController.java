@@ -1,14 +1,11 @@
 package com.example.movie.controller;
 
 import com.example.movie.entity.Movie;
-import com.example.movie.entity.MovieReview;
 import com.example.movie.service.MovieService;
-import com.example.movie.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
 
