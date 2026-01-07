@@ -38,6 +38,7 @@ public class ReviewService {
         movieReview.setMovie(movie);
         movieReview.setRating(reviewRequest.getRating());
         movieReview.setComment(reviewRequest.getComment());
+        movieReview.setReviewerName(reviewRequest.getReviewerName());
 
         return reviewRepository.save(movieReview);
     }

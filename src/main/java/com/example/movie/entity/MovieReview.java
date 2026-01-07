@@ -3,6 +3,7 @@ package com.example.movie.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
 
@@ -28,7 +29,8 @@ public class MovieReview {
 //    @Column(name = "movie_id")
 //    private int movieId;
 
-    @Column(name = "created_at")
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
     private Timestamp createdAt;
 
     @ManyToOne
