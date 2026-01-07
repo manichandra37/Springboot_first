@@ -15,8 +15,9 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins(
-                                "https://your-netlify-app.netlify.app",  // Your actual Netlify URL
-                                "http://localhost:5173"
+                                "https://peppy-centaur-ea6e8a.netlify.app",  // Netlify production domain
+                                "http://localhost:5173",  // Vite dev server
+                                "http://localhost:3000"   // Alternative dev server
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
